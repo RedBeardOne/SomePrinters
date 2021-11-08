@@ -1,10 +1,10 @@
 package hewegoagain.printers;
 
-import hewegoagain.interfases.IStudentPrinter;
+import hewegoagain.interfases.IPrinter;
 import hewegoagain.interfases.IStudentStringConverter;
 import hewegoagain.stud.Student;
 
-public class ConsolePrinter implements IStudentPrinter {
+public class ConsolePrinter implements IPrinter<Student> {
     private IStudentStringConverter converter;
 
     public ConsolePrinter(IStudentStringConverter converter) {

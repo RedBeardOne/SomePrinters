@@ -1,6 +1,6 @@
 package hewegoagain.printers;
 
-import hewegoagain.interfases.IStudentPrinter;
+import hewegoagain.interfases.IPrinter;
 import hewegoagain.stud.Student;
 import hewegoagain.stud.StudentJsonConv;
 import hewegoagain.stud.StudentPrimitiveConv;
@@ -10,22 +10,22 @@ import java.math.BigDecimal;
 
 public class TaskThree {
     public void breeding() {
-        IStudentPrinter[] printers = new IStudentPrinter[]{
+        IPrinter[] printers = new IPrinter[]{
                 new ConsolePrinter(new StudentPrimitiveConv()),
                 new ConsolePrinter(new StudentJsonConv()),
                 new ConsolePrinter(new StudentXmlConv()),
                 new NowherePrinter()};
         Student stud = new Student("Son", 32, (new BigDecimal("231231.23")));
-        IStudentPrinter printer = new DelegatingStudentPrinter(printers);
+        IPrinter printer = new DelegatingStudentPrinter(printers);
         printer.print(stud);
     }
     public void breeding(Student student) {
-        IStudentPrinter[] printers = new IStudentPrinter[]{
+        IPrinter[] printers = new IPrinter[]{
                 new ConsolePrinter(new StudentPrimitiveConv()),
                 new ConsolePrinter(new StudentJsonConv()),
                 new ConsolePrinter(new StudentXmlConv()),
                 new NowherePrinter()};
-        IStudentPrinter printer = new DelegatingStudentPrinter(printers);
+        IPrinter printer = new DelegatingStudentPrinter(printers);
         printer.print(student);
     }
 }

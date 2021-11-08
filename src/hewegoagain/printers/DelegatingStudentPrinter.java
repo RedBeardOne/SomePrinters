@@ -1,19 +1,18 @@
 package hewegoagain.printers;
 
-import hewegoagain.interfases.IStudentPrinter;
-import hewegoagain.interfases.IStudentStringConverter;
+import hewegoagain.interfases.IPrinter;
 import hewegoagain.stud.Student;
 
-public class DelegatingStudentPrinter implements IStudentPrinter {
-    private IStudentPrinter[] printers;
+public class DelegatingStudentPrinter implements IPrinter<Student> {
+    private IPrinter[] printers;
 
-    public DelegatingStudentPrinter(IStudentPrinter[] printers) {
+    public DelegatingStudentPrinter(IPrinter[] printers) {
         this.printers = printers;
     }
 
     @Override
     public void print(Student student) {
-        for (IStudentPrinter printer : printers) {
+        for (IPrinter printer : printers) {
             printer.print(student);
         }
     }

@@ -12,7 +12,7 @@ public class StudentXmlConv implements IStudentStringConverter {
         build.append("\t").append("<").append("name").append(">").append(student.name).append("<").append("name").append(">").append('\n');
         build.append("\t").append("<").append("age").append(">").append(student.age).append("<").append("age").append(">").append('\n');
         build.append("\t").append("<").append("salary").append(">").append(student.salary).append("<").append("salary").append(">").append('\n');
-        build.append("<student>");
+        build.append("</student>");
         return build.toString();
     }
 }

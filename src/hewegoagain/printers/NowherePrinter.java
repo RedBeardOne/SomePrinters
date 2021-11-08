@@ -1,10 +1,9 @@
 package hewegoagain.printers;
 
-import hewegoagain.interfases.IStudentPrinter;
+import hewegoagain.interfases.IPrinter;
 import hewegoagain.stud.Student;
 
-public class NowherePrinter implements IStudentPrinter {
-
+public class NowherePrinter implements IPrinter<Student> {
 
     @Override
     public void print(Student student) {
